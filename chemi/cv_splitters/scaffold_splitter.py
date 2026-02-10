@@ -3,7 +3,7 @@ from rdkit.Chem.Scaffolds.MurckoScaffold import GetScaffoldForMol
 from collections import Counter
 import heapq
 import numpy as np
-from cv_splitters.splitter import Splitter
+from .splitter import Splitter
 
 class ScaffoldSplitter(Splitter):
     

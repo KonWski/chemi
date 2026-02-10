@@ -1,4 +1,4 @@
-from cv_splitters.splitter import Splitter
+from .splitter import Splitter
 import random
 
 class ScaffoldSplitter(Splitter):
