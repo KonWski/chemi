@@ -38,7 +38,7 @@ class ScaffoldSplitter(Splitter):
         grouped_scaffold_ids = self.reverse_dict(self.group_scaffolds_balanced(scaffold_ids))
 
         # folds as fold_id, smiles, labels, original_id
-        folds = {fold_id: {"smiles": [], "labels": [], "molecules_id": []} for fold_id in range(self.cv)}
+        folds = {fold_id: {"smiles": [], "labels": [], "molecule_ids": []} for fold_id in range(self.cv)}
 
         for scaffold_iter, scaffold_id in enumerate(scaffold_ids):
             fold_id = grouped_scaffold_ids[scaffold_id]
