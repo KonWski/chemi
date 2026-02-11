@@ -15,10 +15,14 @@ class ScaffoldSplitter(Splitter):
 
         scaffolds = []
         for smile in smiles:
-            print(f"smile: {smile}")
             mol = Chem.MolFromSmiles(smile)
+            if mol is None:
+                print(f"smile: {smile}")
             # mol = Chem.AddHs(mol)
-            scaffolds.append(Chem.MolToSmiles(GetScaffoldForMol(mol)))
+            try:
+                scaffolds.append(Chem.MolToSmiles(GetScaffoldForMol(mol)))
+            except:
+                scaffolds.append("Outlier")
 
         # smile for each scaffold id created from unique scaffolds
         indexed_scaffolds = {smile: id for id, smile in enumerate([np.unique(scaffolds)])}
