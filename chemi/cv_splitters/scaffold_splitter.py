@@ -4,6 +4,8 @@ from collections import Counter
 import heapq
 import numpy as np
 from .splitter import Splitter
+from uuid import uuid4
+import logging
 
 class ScaffoldSplitter(Splitter):
     
@@ -16,13 +18,14 @@ class ScaffoldSplitter(Splitter):
         scaffolds = []
         for smile in smiles:
             mol = Chem.MolFromSmiles(smile)
-            if mol is None:
-                print(f"smile: {smile}")
-            # mol = Chem.AddHs(mol)
-            try:
+
+            if mol is not None:
                 scaffolds.append(Chem.MolToSmiles(GetScaffoldForMol(mol)))
-            except:
-                scaffolds.append("Outlier")
+
+            else:
+                logging.info(f"Rdkit was not able to convert Smile {smile} to a mol. Hash used as a scaffold.")
+                unidentified_mol_hash = uuid4().hex
+                scaffolds.append(unidentified_mol_hash)
 
         # smile for each scaffold id created from unique scaffolds
         indexed_scaffolds = {smile: id for id, smile in enumerate([np.unique(scaffolds)])}
