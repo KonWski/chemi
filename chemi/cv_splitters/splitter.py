@@ -17,7 +17,7 @@ class Splitter:
 
     def __next__(self):
 
-        if self.cv_split_id >= self.limit:
+        if self.cv_split_id >= self.cv:
             raise StopIteration
 
         valid_fold = self.folds[self.cv_split_id]
