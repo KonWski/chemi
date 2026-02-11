@@ -15,6 +15,7 @@ class ScaffoldSplitter(Splitter):
 
         scaffolds = []
         for smile in smiles:
+            print(f"smile: {smile}")
             mol = Chem.MolFromSmiles(smile)
             # mol = Chem.AddHs(mol)
             scaffolds.append(Chem.MolToSmiles(GetScaffoldForMol(mol)))
