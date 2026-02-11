@@ -16,7 +16,7 @@ class ScaffoldSplitter(Splitter):
         scaffolds = []
         for smile in smiles:
             mol = Chem.MolFromSmiles(smile)
-            mol = Chem.AddHs(mol)
+            # mol = Chem.AddHs(mol)
             scaffolds.append(Chem.MolToSmiles(GetScaffoldForMol(mol)))
 
         # smile for each scaffold id created from unique scaffolds
