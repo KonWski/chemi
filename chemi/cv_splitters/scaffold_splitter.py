@@ -28,7 +28,7 @@ class ScaffoldSplitter(Splitter):
                 scaffolds.append(unidentified_mol_hash)
 
         # smile for each scaffold id created from unique scaffolds
-        indexed_scaffolds = {smile: id for id, smile in enumerate([np.unique(scaffolds)])}
+        indexed_scaffolds = {smile: id for id, smile in enumerate(np.unique(scaffolds))}
         
         # scaffold id for each molecule
         scaffold_ids = [indexed_scaffolds[smile] for smile in scaffolds]
