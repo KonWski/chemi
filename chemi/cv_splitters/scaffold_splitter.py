@@ -13,7 +13,6 @@ class ScaffoldSplitter(Splitter):
         super().__init__(cv)
 
     def split(self, molecule_ids, smiles, labels):
-        # TODO molecules_id odpowiadaja wewnetrznemu oznaczeniu a nie idkom z pierwotnego datasetu
 
         scaffolds = []
         for smile in smiles:
