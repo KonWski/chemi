@@ -32,4 +32,4 @@ class Splitter:
 
         self.cv_split_id += 1
 
-        return self.cv_split_id, train_molecules_id, valid_molecules_id
+        return self.cv_split_id - 1, train_molecules_id, valid_molecules_id
