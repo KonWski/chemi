@@ -25,8 +25,6 @@ class Splitter:
         train_molecules_id = []
 
         for fold_id, fold_data in self.folds.items():
-            print(f"fold_id: {fold_id}")
-            print(f"fold_data: {fold_data}")
             if fold_id == self.cv_split_id:
                 next
             else:
