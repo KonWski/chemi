@@ -1,7 +1,7 @@
 from .splitter import Splitter
 import random
 
-class ScaffoldSplitter(Splitter):
+class RandomSplitter(Splitter):
     
     def __init__(self, cv: int, seed):
         super().__init__(cv)
