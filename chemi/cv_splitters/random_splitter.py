@@ -3,7 +3,7 @@ import random
 
 class RandomSplitter(Splitter):
     
-    def __init__(self, cv: int, seed):
+    def __init__(self, cv: int, seed=123):
         super().__init__(cv)
         self.seed = seed
 
